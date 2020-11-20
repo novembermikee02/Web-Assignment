@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Potens Web Page</title>
+      <!-- Meta tags -->
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      
+      <!-- Meta tags -->
+      <!--stylesheets-->
+      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//style sheet end here-->
+      <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+      <style>
+        .tablestyle{
+           width: 90%;
+           height: 50%;
+           font-size: 22px;
+        }
+        .tableS{
+           width: 100%;
+           height: 100%;
+        }
+      </style>
+   </head>
+   <body>
+       <!-- Name : <span id="result"></span>   -->
+      <div class="mid-class">
+         <div class="art-right-w3ls">
+            <h2>Form Details</h2>
+            <form action="#" method="post" class="tableS">
+               <table class="tablestyle">
+                  <div class="main">
+                     <div class="form-left-to-w3l">
+                        <tr>
+                           <th><label for="Name">Name : </label></th>
+                           <td><span id="result"></span></td>
+                        </tr>
+                     </div>
+                     <div class="form-left-to-w3l">
+                        <tr>
+                           <th><label for="Address">Address : </label></th>
+                           <td><span id="result1"></span> </td>
+                        </tr>   
+                     </div>
+                     <div class="form-left-to-w3l">
+                        <tr>
+                           <th><label for="Phone">Phone : </label></th>
+                           <td><span id="result2"></span></td>
+                        </tr>
+                     </div>
+                     <div class="form-left-to-w3l">
+                        <tr>
+                           <th><label for="Refference">Refference : </label></th>
+                           <td><span id="result3"></span></td>
+                        </tr>
+                     </div>
+                     <div class="form-left-to-w3l">
+                        <tr>
+                           <th><label for="Work">Work Description : </label></th>
+                           <td><span id="result4"></span></td>
+                        </tr>                   
+                     </div>
+                     <div class="form-left-to-w3l">
+                        <tr>
+                           <th><label for="date">Today Date & Time : </label></th>
+                           <td><span id="result5"></span></td>
+                        </tr>                   
+                     </div>
+                  </div>
+               </table>
+               <!-- <div class="clear"></div>
+               <div class="btnn">
+                  <button type="submit">Submit</button>
+               </div> -->
+         </div>
+         <div class="art-left-w3ls">
+            <h1 class="header-w3ls">
+               registration Form
+            </h1>
+         </div>
+      </div>
+      <!-- <footer class="bottem-wthree-footer">
+         <p>
+            © 2019 Gaze Sign Up & Login Form. All Rights Reserved | Design by
+            <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a>
+         </p>
+      </footer> -->
+      <script> 
+        document.getElementById("result").innerHTML = localStorage.getItem("text");
+        document.getElementById("result1").innerHTML = localStorage.getItem("text1");
+        document.getElementById("result2").innerHTML = localStorage.getItem("text2");
+        document.getElementById("result3").innerHTML = localStorage.getItem("text3");
+        document.getElementById("result4").innerHTML = localStorage.getItem("text4");
+        document.getElementById("result5").innerHTML = localStorage.getItem("text5");
+        
+    </script>
+   </body>
+</html>

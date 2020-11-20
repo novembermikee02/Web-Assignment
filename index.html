@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Potens Web Page</title>
+      <!-- Meta tags -->
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!-- Meta tags -->
+
+ 
+      <script>
+         addEventListener("load", function () { 
+               setTimeout(hideURLbar, 0); 
+         }, false); 
+         function hideURLbar() { 
+            window.scrollTo(0, 1); 
+         }
+
+         function displayvalue(){
+            var a = document.getElementById("name").value;
+            localStorage.setItem("text",a);
+
+            var b = document.getElementById("address").value;
+            localStorage.setItem("text1",b);
+
+            var c = document.getElementById("phone").value;
+            localStorage.setItem("text2",c);
+
+            var d = document.getElementById("reff").value;
+            localStorage.setItem("text3",d);
+
+            var e = document.getElementById("workD").value;
+            localStorage.setItem("text4",e);
+
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
+            document.getElementById("currentDateTime").value = dateTime;
+         
+            var f=document.getElementById("currentDateTime").value;
+            localStorage.setItem("text5",f);
+
+            return false;
+         }
+
+
+      </script>
+   
+      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+   </head>
+   <body>
+      <div class="mid-class">
+         <div class="art-right-w3ls">
+            <h2>Registration form</h2>
+            <form action="display.html" method="get">
+               <div class="main">
+                  <div class="form-left-to-w3l">
+                     <input type="text" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="form-left-to-w3l">
+                     <input type="text" id="address" name="address" placeholder="Address">
+                  </div>
+                  <div class="form-left-to-w3l">
+                     <input type="text"id="phone" name="phone" placeholder="Phone">
+                  </div>
+                  <div class="form-left-to-w3l">
+                     <input type="text" id="reff" name="reff" placeholder="Refference">
+                  </div>
+                  <div class="form-left-to-w3l">
+                     <input type="text" id="workD" name="workD" placeholder="Work Description">
+                  </div>
+                  <div class="form-left-to-w3l" id="currentDateTime" ></div>
+               </div>
+               <div class="clear"></div>
+               <div class="btnn">
+                  <button type="submit" value="submit" onclick="displayvalue();">Submit</button>
+                  <!-- <button type="submit" value="submit">Submit</button> -->
+               </div>
+         </div>
+         <div class="art-left-w3ls">
+            <h1 class="header-w3ls">
+               Registration Form
+            </h1>
+         </div>
+      </div>
+      <!-- <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+      <script>
+         var firebaseConfig = {
+         apiKey: "AIzaSyCggK0M6y8JPsVdi6gl_LyBxXLv9rBIcQc",
+         authDomain: "employ-1836c.firebaseapp.com",
+         databaseURL: "https://employ-1836c.firebaseio.com",
+         projectId: "employ-1836c",
+         storageBucket: "employ-1836c.appspot.com",
+         messagingSenderId: "393460493463",
+         appId: "1:393460493463:web:e4a7c9338ebb993a760dd2",
+         measurementId: "G-1RPKEC2P40"
+      };
+      firebase.initializeApp(firebaseConfig);
+      </script>
+      <script src="index.js"></script> -->
+   </body>
+</html>
