@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a href="#" class="navbar-brand">contact Form</a>
+    </nav>
+    <div class="container mt-3 card card-body p-4">
+        <h4 class="text-center">Contact Form</h4>
+        <div class="form-group">
+            <label for="Name">Full Name</label>
+            <input type="text" name="Full Name" id="userFullName" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" name="Email" id="userEmail" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="Massage">Massage</label>
+            <textarea name="Massage" id="userMassage" class="form-control"></textarea>
+        </div>
+
+        <button id="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- 
+<html>
+    <head>
+
+        <title>
+            Document
+        </title>
+
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+      
+        
+
+
+        <link rel="stylesheet" type="text/css" href="index2.css" />
+
+    </head>
+<body>
+
+
+    <table class="center">
+      <tr>
+       <tr>
+            <td>Name-</td>
+           <td><input type="text" id="name"></td></tr><br>
+
+     <tr>
+         <td>Address-</td>
+         <td> <input type="text" id="address"></td></tr><br>
+
+     <tr>
+        <td>mobile-</td> 
+        <td> <input type="text" id="mobile"></td></tr><br>
+
+
+     <tr>
+         <td>Reference-</td> 
+         <td> <input type="text" id="reference"></td></tr><br>
+        
+
+    <tr>
+        <td>Work Description-</td> 
+        <td> <input type="text" id="wd"></td></tr><br>
+        
+    
+
+     <tr><td>
+             <button class="button" id="send">send</button>
+         
+
+    </td></tr>
+    </tr>
+    </table>
+
+
+      <h1> -----Data------ </h1>
+      
+      <div id="root"></div>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBE6HKZacwFjcdRpX9-9JP0182ysYFQkNo",
+            authDomain: "form-1-7ac4e.firebaseapp.com",
+            databaseURL: "https://form-1-7ac4e.firebaseio.com",
+            projectId: "form-1-7ac4e",
+            storageBucket: "form-1-7ac4e.appspot.com",
+            messagingSenderId: "195279977621",
+            appId: "1:195279977621:web:700050fb6ff484f57c2f9c"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var firebaseRef=firebase.database().ref('Information');
+
+        document.querySelector('#send').addEventListener('click',()=>
+        {
+          
+            const name=document.getElementById('name').value;
+            firebaseRef.push(name);
+            const address=document.getElementById('address').value;
+            firebaseRef.push(address);
+            const mobile=document.getElementById('mobile').value;
+            firebaseRef.push(mobile);
+            const reference=document.getElementById('reference').value;
+            firebaseRef.push(reference);
+            const wd=document.getElementById('wd').value;
+            firebaseRef.push(wd);
+
+
+
+        });
+
+
+       firebaseRef.on("value",function(snapshot){
+ 
+        snapshot.forEach(function(element){
+        
+            document.querySelector('#root').innerHTML +=`<div>${element.val()}</div>`});
+           
+       });
+    </script>
+
+
+</body>
+
+
+
+</html> -->

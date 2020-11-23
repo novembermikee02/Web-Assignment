@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="infosResults">
+
+    </div>
+    <script>
+        // Your web app's Firebase configuration
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyBE6HKZacwFjcdRpX9-9JP0182ysYFQkNo",
+            authDomain: "form-1-7ac4e.firebaseapp.com",
+            databaseURL: "https://form-1-7ac4e.firebaseio.com",
+            projectId: "form-1-7ac4e",
+            storageBucket: "form-1-7ac4e.appspot.com",
+            messagingSenderId: "195279977621",
+            appId: "1:195279977621:web:700050fb6ff484f57c2f9c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+        // Refernece contactInfo collections
+        var contactInfo = firebase.database().ref("infos");
+                // Listen for a submit
+
+        document.querySelector(".contact-form").addEventListener("submit", submitForm);
+
+        function submitForm(e) {
+            
+            e.preventDefault();
+
+            //   Get input Values
+            let name = document.querySelector(".name").value;
+            let email = document.querySelector(".email").value;
+            let message = document.querySelector(".message").value;
+            
+
+            saveContactInfo(name, email, message);
+
+            document.querySelector(".contact-form").reset();
+            window.location.replace("C:\Users\Nilesh\Documents\GitHub\Web-Assignment\showData.html");
+        }
+
+
+        // Save infos to Firebase
+        function saveContactInfo(name, email, message) {
+            let newContactInfo = contactInfo.push();
+
+            newContactInfo.set({
+            name: name,
+            email: email,
+            message: message,
+            
+            });
+        }
+        retriveInfos();   
+            //   retrive info
+        function retriveInfos(){
+            let ref = firebase.database().ref("infos");
+            ref.on("value", gotData);
+        }
+
+
+        function gotData(data){
+            let info = data.val();
+            let keys = Object.keys(info);
+            
+            for(let i = 0; i < keys.length; i++){
+                let infoData = keys[i];
+                let name = info[infoData].name;
+                let email = info[infoData].email;
+                let message = info[infoData].message;
+                console.log(name,email,message);
+
+                let infosResults = document.querySelector(".infosResults");
+
+                infosResults.innerHTML += `<div>
+                <p><strong>Name: </strong>${name}<br/>
+                <a><strong>Email: </strong>${email}</a><br/>
+                <a><strong>Message: </strong>${message}</a>
+                </p>
+                </div>`;
+                
+            }
+        }
+
+        retriveInfos();
+    </script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<strong>Message: </strong>${message}
+
+<th><strong>Name: </strong>${name}<th>
+    <th><strong>Email: </strong>${email}<th>
+    <th><strong>Message: </strong>${message}<th>
